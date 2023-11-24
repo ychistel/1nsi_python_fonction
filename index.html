@@ -290,6 +290,62 @@ document.write(`
                   
   <section id="les-fonctions-en-python">
 <h1>Les fonctions en Python<a class="headerlink" href="#les-fonctions-en-python" title="Lien permanent vers cette rubrique">#</a></h1>
+<p>Nous avons utilisé le module <code class="docutils literal notranslate"><span class="pre">turtle</span></code> pour réaliser des dessins. Ce module propose de nombreuses <strong>fonctions</strong> pour effectuer nos tracés. On en rappelle quelques-unes:</p>
+<table class="table table-center">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Fonction Turtle</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>up()</p></td>
+<td><p>lève le crayon</p></td>
+</tr>
+<tr class="row-odd"><td><p>down()</p></td>
+<td><p>baisse le crayon</p></td>
+</tr>
+<tr class="row-even"><td><p>forward(n)</p></td>
+<td><p>avance la tortue de du nombre n</p></td>
+</tr>
+<tr class="row-odd"><td><p>left(d)</p></td>
+<td><p>tourne la tortue vers la gauche de d degrés</p></td>
+</tr>
+<tr class="row-even"><td><p>right(d)</p></td>
+<td><p>tourne la tortue vers la droite de d degrés</p></td>
+</tr>
+<tr class="row-odd"><td><p>goto(x,y)</p></td>
+<td><p>déplace la tortue au point de coordonnées (x;y)</p></td>
+</tr>
+<tr class="row-even"><td><p>circle(r)</p></td>
+<td><p>dessine un cercle de rayon r</p></td>
+</tr>
+</tbody>
+</table>
+<p>Les fonctions <code class="docutils literal notranslate"><span class="pre">forward</span></code> et <code class="docutils literal notranslate"><span class="pre">left</span></code> ont besoin d’un nombre écrit entre les parenthèses pour être correctement exécutées par Python. On dit que ces fonctions utilisent un <strong>paramètre</strong>.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>D’autres fonctions n’ont pas besoin de valeurs pour être exécutées mais les parenthèses sont quand même présentes ! Les fonctions <code class="docutils literal notranslate"><span class="pre">up()</span></code> et <code class="docutils literal notranslate"><span class="pre">down()</span></code> qui lève et baisse le crayon sont <strong>sans paramètre</strong>.</p>
+<p>Pour finir, une fonction peut avoir besoin de plusieurs valeurs comme la fonction <code class="docutils literal notranslate"><span class="pre">goto(x,y)</span></code> où <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> sont 2 <strong>paramètres</strong> associés aux coordonnées à atteindre.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Une <strong>fonction</strong> se note toujours avec des parentèses situées juste après son nom.</p>
+</div>
+<p>Comme le module <code class="docutils literal notranslate"><span class="pre">Turtle</span></code>, nous pouvons créer nos propres fonctions en respectant une syntaxe imposée par le langage Python. La création de fonction apporte de nombreux avantages à un programme:</p>
+<ul class="simple">
+<li><p>une fonction permet de centraliser des blocs d’instructions qui se répètent plusieurs fois dans un programme;</p></li>
+<li><p>une fonction est plus facile à debugger qu’un bloc d’instructions noyé dans un programme;</p></li>
+<li><p>une fonction peut être appelée autant de fois que nécessaire;</p></li>
+<li><p>une fonction peut renvoyer une ou plusieurs valeurs utilisées par le programme.</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </section>
