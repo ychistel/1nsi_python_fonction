@@ -1,0 +1,619 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Les fonctions en Python &#8212; NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/fonction_native';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Créer ses fonctions" href="fonction.html" />
+    <link rel="prev" title="Activité" href="activite.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="activite.html">Activité</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Les fonctions en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonction.html">Créer ses fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice_approfondissement.html">Exercices d’approfondissement</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/fonction_native.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Les fonctions en Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites">Généralités</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quelques-fonctions-utiles">Quelques fonctions utiles</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="toctree-wrapper compound">
+</div>
+<section id="les-fonctions-en-python">
+<h1>Les fonctions en Python<a class="headerlink" href="#les-fonctions-en-python" title="Lien permanent vers cette rubrique">#</a></h1>
+<p>Comment connaître le nombre de caractères dans une chaine de caratères ?
+On peut écrire un script en Python qui permet de connaître ce nombre.
+Mais Python dispose déjà de ce script, c’est la <strong>fonction</strong> <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<p>Par exemple, la chaine de caractères <code class="docutils literal notranslate"><span class="pre">&quot;bonjour</span> <span class="pre">le</span> <span class="pre">monde&quot;</span></code> contient 16
+caractères. En Python, pour connaître ce nombre il suffit d’appeler la
+fonction avec la chaine de caratères passée en <strong>argument</strong>.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Dans l’interpréteur python on saisit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;bonjour le monde&quot;</span><span class="p">)</span>
+<span class="go">16</span>
+</pre></div>
+</div>
+</div>
+<section id="generalites">
+<h2>Généralités<a class="headerlink" href="#generalites" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Le langage Python dispose de plusieurs fonctions dites <strong>natives</strong> comme
+la fonction <code class="docutils literal notranslate"><span class="pre">len</span></code>. Ces fonctions permettent de réaliser des calculs et
+d’agir sur les variables.</p>
+<p>Une fonction est définie par un <strong>nom</strong> et par les <strong>paramètres</strong> dont
+elle a besoin pour être exécutée. Les paramètres sont placés entre
+parenthèses juste après le nom de la fonction.</p>
+<p>La syntaxe d’une fonction est donc :
+<code class="docutils literal notranslate"><span class="pre">nom_de_fonction(paramètre_1,</span> <span class="pre">paramètre_2,...)</span></code>.</p>
+<p>Une fonction :</p>
+<ul class="simple">
+<li><p>peut avoir 0, 1, 2, plusieurs paramètres.</p></li>
+<li><p>peut avoir des paramètres <strong>optionnels</strong> qui ont une valeur par
+défaut; il est possible de modifier cette valeur à l’appel de la
+fonction en précisant entre parenthèses
+<code class="docutils literal notranslate"><span class="pre">paramètre</span> <span class="pre">=</span> <span class="pre">nouvelle</span> <span class="pre">valeur</span></code>.</p></li>
+<li><p>respecte l’ordre des paramètres.</p></li>
+</ul>
+<p>On appelle <strong>arguments</strong> les valeurs fournies à la fonction lors de l’appel.
+Chaque argument sera affecté, dans l’ordre, à chaque paramètre de la fonction.</p>
+</section>
+<section id="quelques-fonctions-utiles">
+<h2>Quelques fonctions utiles<a class="headerlink" href="#quelques-fonctions-utiles" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Les fonctions natives sont répertoriées sur le site de la <a class="reference external" href="https://docs.python.org/fr/3/library/functions.html">documentation
+Python</a>.</p>
+<p>On donne un bref aperçu de quelques unes de ce fonctions à travers des
+usages qui nous seront utiles cette année.</p>
+<p><strong>abs(x)</strong></p>
+<p>La fonction mathématique <code class="docutils literal notranslate"><span class="pre">abs</span></code> prend en argument un nombre et renvoie
+sa valeur absolue, c’est à dire transformé en nombre positif.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+<span class="go">3.5 2</span>
+</pre></div>
+</div>
+<p>les variables <cite>c</cite> et <cite>d</cite> ont pour valeurs respectives <cite>3.5</cite> et <cite>2</cite></p>
+</div>
+<p><strong>float(x)</strong></p>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">float</span></code> prend en argument un nombre ou une chaine de
+caractères numériques et renvoie un nombre à virgule, un flottant.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;1E03&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-4.6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>les variables <cite>a</cite>, <cite>b</cite> et <cite>c</cite> ont pour valeurs respectives <cite>5.0</cite>, <cite>1000.0</cite> et <cite>-4.6</cite></p>
+</div>
+<p><strong>help(objet)</strong></p>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">help</span></code> prend en argument un objet Python qui peut être une
+fonction ou une variable et renvoie l’aide native sur celui-ci.</p>
+<p>Si la fonction est exécutée sans argument <code class="docutils literal notranslate"><span class="pre">help()</span></code>, un programme
+d’aide démarre dans l’interpréteur.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>L’aide sur la fonction <cite>abs</cite> est affichée:</p>
+<blockquote>
+<div><p>Help on built-in function abs in module builtins:</p>
+<dl class="simple">
+<dt>abs(x, /)</dt><dd><p>Return the absolute value of the argument.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<p><strong>input(prompt)</strong></p>
+<p>La fonction input permet de saisir une valeur par un utilisateur. Le
+<code class="docutils literal notranslate"><span class="pre">prompt</span></code> est affiché et peut constituer un guide pour la saise. La
+valeur saisie sera convertie en chaine de caractères.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Comment allez-vous ? &quot;</span><span class="p">)</span>
+<span class="go">Comment allez-vous ? bien</span>
+<span class="go">&#39;bien&#39;</span>
+</pre></div>
+</div>
+<p>Dans l’interpréteur, une ligne de saisie est proposée avec le message « Comment allez-vous ? »
+Après la saisie de la valeur, celle-ci est affichée.</p>
+</div>
+<p><strong>int(x,base=10)</strong></p>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">int</span></code> transforme en nombre entier l’argument passé en
+paramètre. On peut remarquer la présence d’un paramètre optionnel
+<code class="docutils literal notranslate"><span class="pre">base</span></code> qui a pour valeur 10 par défaut.</p>
+<p>Si la valeur passée en argument est un flottant, alors la fonction
+renvoie la partie entière du flottant, c’est à dire la partie avent la
+virgule.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mf">4.1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;1E3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>les variables <cite>a</cite>, <cite>b</cite> et <cite>c</cite> ont pour valeurs respectives <cite>-5</cite>, <cite>3</cite> et <cite>1000</cite>.</p>
+</div>
+<p><strong>len(x)</strong></p>
+<p>La fonction <code class="docutils literal notranslate"><span class="pre">len</span></code> renvoie le nombre d’éléments contenus dans la
+variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. Cette fonction s’applique sur des variables de type
+<strong>string</strong> et <strong>list</strong> qui ont plusieurs éléments.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;bonjour&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>la variable <cite>a</cite> a pour valeur <cite>7</cite> puisque le mot <em>bonjour</em> a 7 lettres.
+la variable <cite>b</cite> a pour valeur <cite>3</cite> puisque la liste contient 3 nombres.</p>
+</div>
+<p><strong>pow(base,exp)</strong></p>
+<p>La fonction mathématique <code class="docutils literal notranslate"><span class="pre">pow</span></code> calcule une puissance du nombre passé
+en argument du paramètre <code class="docutils literal notranslate"><span class="pre">base</span></code> élevé à la puissance <code class="docutils literal notranslate"><span class="pre">exp</span></code>.</p>
+<p>Cette fonction est finalement équivalente à <code class="docutils literal notranslate"><span class="pre">base**exp</span></code>.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>les variables <cite>a</cite> et <cite>b</cite> ont pour valeurs respectives <span class="math notranslate nohighlight">\(4^2=16\)</span> et <span class="math notranslate nohighlight">\(2^{-1}=0.5\)</span>.</p>
+</div>
+<p><strong>print(variables, sep=’ ‘, end=’:raw-latex:`n`’)</strong></p>
+<p>Cette fonction permet d’afficher un message, une valeur ou la
+combinaison des deux. Elle prend en paramètre une chaine de caractères
+et/ou une variable. Elle s’applique aux variables quel que soit leur
+type.</p>
+<p>La fonction possède des paramètres optionnels:</p>
+<ul class="simple">
+<li><p>le paramètre <code class="docutils literal notranslate"><span class="pre">sep='</span> <span class="pre">'</span></code> qui est le séparateur affiché entre les valeurs</p></li>
+<li><p>le paramètre <code class="docutils literal notranslate"><span class="pre">end='\n'</span></code> qui réalise un retour à la ligne pour l’affichage suivant.</p></li>
+</ul>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<ol class="arabic">
+<li><p>Afficher un message:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Afficher la valeur d’une variable:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Afficher une variable accompagnée d’un message:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La valeur de a est:&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Changer de séparateur entre plusieurs variables:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;&lt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>L’affichage en console sera : <cite>4 &lt; 5 &lt; 6</cite></p>
+</li>
+</ol>
+</div>
+<p><strong>round(n,ndigits)</strong></p>
+<p>La fontion <code class="docutils literal notranslate"><span class="pre">round</span></code> renvoie le nombre <code class="docutils literal notranslate"><span class="pre">n</span></code> arrondi avec une précision
+de <code class="docutils literal notranslate"><span class="pre">ndigits</span></code> chiffres après la virgule. Si <code class="docutils literal notranslate"><span class="pre">ndigits</span></code> est omis (ou
+est None), l’entier le plus proche est renvoyé.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">4.63</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">4.63</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>les variables <cite>a</cite> et <cite>b</cite> ont pour valeurs respectives <cite>5</cite> et <cite>4.6</cite>.</p>
+</div>
+<p><strong>type(variable)</strong></p>
+<p>La fontion <code class="docutils literal notranslate"><span class="pre">type</span></code> renvoie le type de la variable passée en paramètre.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mf">4.63</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+<p>la variable <cite>a</cite> est de type <cite>int</cite> et la variable <cite>b</cite> est de type <cite>float</cite>.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="activite.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Activité</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fonction.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Créer ses fonctions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalites">Généralités</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quelques-fonctions-utiles">Quelques fonctions utiles</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023,Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Exercices &#8212; NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/exercice';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercices d’approfondissement" href="exercice_approfondissement.html" />
+    <link rel="prev" title="Créer ses fonctions" href="fonction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="activite.html">Activité</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonction_native.html">Les fonctions en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonction.html">Créer ses fonctions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice_approfondissement.html">Exercices d’approfondissement</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/exercice.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercices</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">Exercice 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-6">Exercice 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-7">Exercice 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-8">Exercice 8</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="toctree-wrapper compound">
+</div>
+<section id="exercices">
+<h1>Exercices<a class="headerlink" href="#exercices" title="Lien permanent vers cette rubrique">#</a></h1>
+<p>Les trois premiers exercices sont à chercher sur feuille.</p>
+<section id="exercice-1">
+<h2>Exercice 1<a class="headerlink" href="#exercice-1" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On donne la fonction <code class="docutils literal notranslate"><span class="pre">mystere_1</span></code> sans paramètre.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mystere_1</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">c</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Que renvoie la fonction suite à son exécution?</p></li>
+<li><p>Est-il possible de modifier les valeurs des variables <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> en dehors de la fonction? Justifier.</p></li>
+<li><p>Comment modifier la fonction pour pouvoir modifier les valeurs des variables <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> et qu’elle renvoie leur somme ?</p></li>
+</ol>
+</section>
+<section id="exercice-2">
+<h2>Exercice 2<a class="headerlink" href="#exercice-2" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On donne la fonction <code class="docutils literal notranslate"><span class="pre">mystere_2</span></code> ayant pour paramètre le nombre <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mystere_2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Que renvoie l’appel <code class="docutils literal notranslate"><span class="pre">mystere_2(7)</span></code> ? et mystere_2(-4) ?</p></li>
+<li><p>On supprime l’instruction <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">y</span></code>. Que renvoie la fonction ?</p></li>
+<li><p>Est-il possible d’obtenir les mêmes valeurs sans utiliser la variable locale <code class="docutils literal notranslate"><span class="pre">y</span></code> ? Si oui, comment ?</p></li>
+</ol>
+</section>
+<section id="exercice-3">
+<h2>Exercice 3<a class="headerlink" href="#exercice-3" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On donne la fonction <code class="docutils literal notranslate"><span class="pre">mystere_3</span></code> ayant pour paramètres les nombres <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> et <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mystere_3</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">d</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Combien d’arguments faut-il ajouter lors de l’appel de la fonction <code class="docutils literal notranslate"><span class="pre">mystere_3</span></code> ? Donner un exemple d’appel.</p></li>
+<li><p>Comment appelle-t-on la variable <code class="docutils literal notranslate"><span class="pre">d</span></code> de la fonction <code class="docutils literal notranslate"><span class="pre">mystere_3</span></code> ?</p></li>
+<li><p>On exécute l’appel : <code class="docutils literal notranslate"><span class="pre">D</span> <span class="pre">=</span> <span class="pre">mystere_3(1,2,3)</span></code>. Quelle est la valeur de la variable <code class="docutils literal notranslate"><span class="pre">D</span></code> ?</p></li>
+</ol>
+</section>
+<section id="exercice-4">
+<h2>Exercice 4<a class="headerlink" href="#exercice-4" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On considère la figure suivante:</p>
+<a class="reference internal image-reference" href="../_images/roue_rayon_100.png"><img alt="../_images/roue_rayon_100.png" class="align-center" src="../_images/roue_rayon_100.png" style="width: 240px;" /></a>
+<p>Cette figure réalisée avec le module turtle a été obtenue grâce au code suivant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="mi">360</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">circle</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">right</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">forward</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">left</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">hideturtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Remplacer le calcul de la variable angle par la fonction <code class="docutils literal notranslate"><span class="pre">angle</span></code> qui prend en paramètre le nombre de rayons et qui renvoie la mesure de l’angle entre 2 rayons consécutifs.</p></li>
+<li><p>Insérer dans la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> l’appel à la fonction <code class="docutils literal notranslate"><span class="pre">angle</span></code> pour obtenir l’angle de rotation de la tortue.</p></li>
+<li><p>Créer la fonction <code class="docutils literal notranslate"><span class="pre">roue</span></code> qui a pour paramètres <code class="docutils literal notranslate"><span class="pre">r</span></code> et <code class="docutils literal notranslate"><span class="pre">n</span></code> et qui  effectue le tracé de la roue de rayon <code class="docutils literal notranslate"><span class="pre">r</span></code> avec <code class="docutils literal notranslate"><span class="pre">n</span></code> rayons.</p></li>
+<li><p>Écrire le code principal pour réaliser la roue de rayon 100 avec 20 rayons.</p></li>
+</ol>
+</section>
+<section id="exercice-5">
+<h2>Exercice 5<a class="headerlink" href="#exercice-5" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Cet exercice nécessite l’import du module <code class="docutils literal notranslate"><span class="pre">turtle</span></code> pour effectuer les tracés.</p>
+<ol class="arabic">
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">carre</span></code> prend en paramètre une longueur <code class="docutils literal notranslate"><span class="pre">c</span></code> et dessine un carré dont le côté mesure <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<ol class="loweralpha simple">
+<li><p>Écrire le code de la fonction <code class="docutils literal notranslate"><span class="pre">carre</span></code>.</p></li>
+<li><p>Réaliser un carré de côté 120.</p></li>
+</ol>
+</li>
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">triangle</span></code> prend en paramètre une longueur <code class="docutils literal notranslate"><span class="pre">t</span></code> et dessine un triangle équilatéral dont le côté mesure <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+<ol class="loweralpha simple">
+<li><p>Écrire le code de la fonction <code class="docutils literal notranslate"><span class="pre">triangle</span></code>.</p></li>
+<li><p>Réaliser un triangle de côté 120.</p></li>
+</ol>
+</li>
+<li><p>La fonction <code class="docutils literal notranslate"><span class="pre">hexagone</span></code> prend en paramètre une longueur <code class="docutils literal notranslate"><span class="pre">h</span></code> et dessine un hexagone régulier dont le côté mesure <code class="docutils literal notranslate"><span class="pre">h</span></code>.</p>
+<ol class="loweralpha simple">
+<li><p>Écrire le code de la fonction <code class="docutils literal notranslate"><span class="pre">hexagone</span></code>.</p></li>
+<li><p>Réaliser un hexagone de côté 120.</p></li>
+</ol>
+</li>
+<li><p>Quel programme principal utilisant les trois fonctions précédentes permet d’obtenir la figure ci-dessous ?</p>
+<a class="reference internal image-reference" href="../_images/carre_triangle_hexagone.png"><img alt="../_images/carre_triangle_hexagone.png" class="align-center" src="../_images/carre_triangle_hexagone.png" style="width: 240px;" /></a>
+</li>
+<li><p>On peut remarquer que les trois fonctions <code class="docutils literal notranslate"><span class="pre">carre</span></code>, <code class="docutils literal notranslate"><span class="pre">triangle</span></code> et <code class="docutils literal notranslate"><span class="pre">hexagone</span></code> ont de nombreux points communs.</p>
+<ol class="loweralpha simple">
+<li><p>Remplacer ces trois fonctions par une seule fonction nommée <code class="docutils literal notranslate"><span class="pre">polygone</span></code> qui a pour paramètres une longueur de côté et le nombre de côtés de la forme à dessiner.</p></li>
+<li><p>Écrire le programme principal pour obtenir la figure précédente.</p></li>
+<li><p>Remplacer le programme principal par une boucle afin de dessiner 8 formes régulières différentes.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/polygones_8.png"><img alt="../_images/polygones_8.png" class="align-center" src="../_images/polygones_8.png" style="width: 300px;" /></a>
+</li>
+</ol>
+</section>
+<section id="exercice-6">
+<h2>Exercice 6<a class="headerlink" href="#exercice-6" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On reprend le code de l’exrcice précédent.</p>
+<p>Modifier ce code pour que chaque nouveau polygone construit ait pour côté un côté du polygone précédent comme le montre la figure suivante.</p>
+<a class="reference internal image-reference" href="../_images/polygone_cote_commun.png"><img alt="../_images/polygone_cote_commun.png" class="align-center" src="../_images/polygone_cote_commun.png" style="width: 300px;" /></a>
+</section>
+<section id="exercice-7">
+<h2>Exercice 7<a class="headerlink" href="#exercice-7" title="Lien permanent vers cette rubrique">#</a></h2>
+<ol class="arabic simple">
+<li><p>Créer une fonction <code class="docutils literal notranslate"><span class="pre">somme_carre</span></code> qui prend en paramètre deux nombres <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> et renvoie la somme des carrés des deux nombres.</p></li>
+<li><p>Créer une fonction <code class="docutils literal notranslate"><span class="pre">double_produit</span></code> qui prend en paramètre deux nombres <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> et renvoie le double du produit de ces deux nombres.</p></li>
+<li><p>On veut créer une fonction <code class="docutils literal notranslate"><span class="pre">id_rem</span></code> qui prend en paramètre deux nombres <code class="docutils literal notranslate"><span class="pre">a</span></code> et <code class="docutils literal notranslate"><span class="pre">b</span></code> et renvoie le carré de la somme de ces deux nombres. Écrire cette fonction en utilisant les fonctions <code class="docutils literal notranslate"><span class="pre">somme_carre</span></code> et <code class="docutils literal notranslate"><span class="pre">double_produit</span></code>.</p></li>
+</ol>
+</section>
+<section id="exercice-8">
+<h2>Exercice 8<a class="headerlink" href="#exercice-8" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>1. Créer une fonction <code class="docutils literal notranslate"><span class="pre">somme_arithm</span></code> qui prend en paramètre un nombre entier <code class="docutils literal notranslate"><span class="pre">N</span></code> et renvoie la somme de
+tous les nombres entiers inférieurs ou égaux à N.</p>
+<p>2. Créer une fonction <code class="docutils literal notranslate"><span class="pre">somme_carre</span></code> qui prend en paramètre un nombre entier <code class="docutils literal notranslate"><span class="pre">N</span></code> et renvoie la somme des
+carrés des nombres entiers inférieurs ou égaux à N.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fonction.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Créer ses fonctions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercice_approfondissement.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Exercices d’approfondissement</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-1">Exercice 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-2">Exercice 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-3">Exercice 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-4">Exercice 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-5">Exercice 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-6">Exercice 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-7">Exercice 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-8">Exercice 8</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023,Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
