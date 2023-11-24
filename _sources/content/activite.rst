@@ -89,7 +89,7 @@ Pour tracer nos drapeaux, nous allons créer nos fonctions. Python permet de cr�
    a. Écrire la déclaration de la fonction avec ces 5 paramètres.
    b. Compléter le corps de la fonction en y insérant le code précédent pour tracer un rectangle.
    c. Ajouter le positionnement du sommet bas gauche du rectangle.
-   d. Effectuer l'appel ``rectangle(50,0,100,150,"blue") et exécuter le code pour vérifier la construction d'un rectangle bleu.
+   d. Effectuer l'appel ``rectangle(50,0,100,150,"blue") et exécuter le code pour vérifier la construction d'un rectangle bleu``.
    
 3. Nous allons écrire le code pour tracer les drapeaux de la Frace et des Pays-Bas qui ont les mêmes couleurs. Nous laisserons une distance de 50 entre chaque drapeau.
 
