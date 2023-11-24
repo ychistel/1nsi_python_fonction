@@ -1,0 +1,7 @@
+up() - lève le crayon
+down() - baisse le crayon
+forward(n) - avance la tortue de du nombre n
+left(d) - tourne la tortue vers la gauche de d degrés
+right(d) - tourne la tortue vers la droite de d degrés
+goto(x,y) - déplace la tortue au point de coordonnées (x;y)
+circle(r) - dessine un cercle de rayon r

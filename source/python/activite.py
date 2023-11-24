@@ -1,6 +1,18 @@
 from turtle import *
 
+# --------------------------------
+# préparation environnement Turtle
+# --------------------------------
+
+# fond gris
+bgcolor('lightgray')
+
+# initialisation des dimensions de la fenêtre
+setworldcoordinates(-20,-20,400,200)
+
+# ----------------------
 # Les fonctions
+# ----------------------
 
 def deplacer(x,y):
     up()
@@ -22,28 +34,30 @@ def rectangle(x,y,l,h,couleur):
 # Le programme principal
 # ----------------------
 
-# Fond gris
-bgcolor('lightgray')
-
 # Hauteur et Largeur des drapeaux
 H = 120
 L = 180
-# Drapeau de la France:
-x = -L
-y = 0
-rectangle(x,y,L//3,H,"blue")
-x = x + L//3
-rectangle(x,y,L//3,H,"white")
-x = x + L//3
-rectangle(x,y,L//3,H,"red")
 
+# ---------------------------
+# Drapeau de la France:
+# ---------------------------
+
+# rectangle bleu
+rectangle(0,0,L//3,H,"blue")
+# rectangle blanc
+rectangle(L//3,0,L//3,H,"white")
+# rectangle rouge
+rectangle(2*L//3,0,L//3,H,"red")
+
+# ---------------------------
 # Drapeau des Pays-Bas:
-x = 50
-y = 0
-rectangle(x,y,L,H//3,"blue")
-y = y + H//3
-rectangle(x,y,L,H//3,"white")
-y = y + H//3
-rectangle(x,y,L,H//3,"red")
+# ---------------------------
+
+# rectangle bleu
+rectangle(200,0,L,H//3,"blue")
+# rectangle blanc
+rectangle(200,H//3,L,H//3,"white")
+# rectangle rouge
+rectangle(200,2*H//3,L,H//3,"red")
 
 hideturtle()
