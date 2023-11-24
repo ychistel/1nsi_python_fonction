@@ -1,0 +1,14 @@
+from turtle import * - instruction à écrire pour utiliser le module Turtle
+up() - lève le crayon
+down() - baisse le crayon
+forward(n) - avance la tortue de du nombre n
+left(d) - tourne la tortue vers la gauche de d degrés
+right(d) - tourne la tortue vers la droite de d degrés
+goto(x,y) - déplace la tortue au point de coordonnées (x;y)
+circle(r) - dessine un cercle de rayon r
+width(e) - définit la grosseur du trait
+color('couleur') - définit la couleur du trait et remplissage
+bgcolor('couleur') - définit la couleur de fond
+hideturtle() - cache la tortue
+showturtle() - montre la tortue
+reset() - efface tout le dessin
