@@ -75,10 +75,10 @@ On va écrire la fonction ``rectangle`` qui construit un rectangle de couleur. L
 
 #. Exécuter le fichier ``drapeau.py`` puis saisir dans l'interpréteur l'instruction ``rectangle(100,150,"blue")`` et vérifier que le rectangle bleu se dessine bien dans la fenêtre graphique.
 
-Dessiner les drapeaux
----------------------
+Le programme principal
+----------------------
    
-Nous allons écrire le code pour tracer les drapeaux de la France et de l'Allemagne.
+Nous allons écrire le code pour tracer les drapeaux de la France et de l'Allemagne en utilisant nos fonctions ``deplacer`` et ``rectangle``.
 
 .. image:: ../img/drapeau_fr_pb.svg
    :align: center
@@ -86,7 +86,7 @@ Nous allons écrire le code pour tracer les drapeaux de la France et de l'Allema
    
 #. Repérez les coordonnées du coin bas et gauche de chaque rectangle qui compose le drapeau français.
 #. Dans la console, saisir les fonctions ``deplacer`` et ``rectangle`` pour dessiner le drapeau français.
-#. Lorsque vous avez réussi, ajoutez les instructions dans le code du fichier ``drapeau.py`` pour dessiner le drapeau de la France.
+#. Lorsque vous avez réussi, ajoutez les instructions dans le code du fichier ``drapeau.py``, dans la partie programme principal, pour dessiner le drapeau de la France.
 #. Faire de même avec le drapeau de l'Allemagne. Attention, il doit être positionné à côté du drapeau français et avoir les mêmes dimensions.
    
 Aller plus loin
