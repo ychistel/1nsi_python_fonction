@@ -377,25 +377,20 @@ document.write(`
 </div>
 <section id="fonction-deplacer">
 <h2>Fonction déplacer<a class="headerlink" href="#fonction-deplacer" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Pour tracer les rectangles de couleur différente, il va falloir déplacer la tortue au bon endroit. Le déplacement de la tortue se fait avec les 3 fonctions <code class="docutils literal notranslate"><span class="pre">up</span></code>, <code class="docutils literal notranslate"><span class="pre">goto</span></code> et <code class="docutils literal notranslate"><span class="pre">down</span></code> du module <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. L’objectif est donc de créer une fonction <code class="docutils literal notranslate"><span class="pre">deplacer</span></code> qui appelle ces 3 fonctions. On donne le début du code à compléter:</p>
+<p>Pour tracer les rectangles de couleur différente, il va falloir déplacer la tortue au bon endroit. Le déplacement de la tortue se fait avec les 3 fonctions <code class="docutils literal notranslate"><span class="pre">up</span></code>, <code class="docutils literal notranslate"><span class="pre">goto</span></code> et <code class="docutils literal notranslate"><span class="pre">down</span></code> du module <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. L’objectif est donc de créer une fonction <code class="docutils literal notranslate"><span class="pre">deplacer</span></code> qui appelle ces 3 fonctions.</p>
+<p>On donne le code de la fonction <code class="docutils literal notranslate"><span class="pre">deplacer</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deplacer</span><span class="p">():</span>
     <span class="c1"># on lève le crayon</span>
     <span class="n">up</span><span class="p">()</span>
     <span class="c1"># on déplace la tortue</span>
-    <span class="o">...</span>
+    <span class="n">goto</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
     <span class="c1"># on baisse le crayon</span>
     <span class="n">down</span><span class="p">()</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li><p>Recopier cette fonction dans la partie de code du fichier <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> réservée aux fonctions.</p></li>
-<li><p>Compléter la fonction pour déplacer la tortue à l’endroit voulu.</p></li>
-<li><p>En l’état, la fonction <code class="docutils literal notranslate"><span class="pre">goto</span></code> ne sait pas à quelles coordonnées elle doit déplacer la tortue. Pour cela, on utilise des paramètres <code class="docutils literal notranslate"><span class="pre">x,y</span></code> qui désignent les coordonnées où placer la tortue.</p>
-<ol class="loweralpha simple">
-<li><p>Ajouter ces paramètres : <code class="docutils literal notranslate"><span class="pre">deplacer(x,y)</span></code></p></li>
-<li><p>Utiliser les même paramètres pour la fonction <code class="docutils literal notranslate"><span class="pre">goto(x,y)</span></code>.</p></li>
-</ol>
-</li>
+<li><p>En l’état, la fonction <code class="docutils literal notranslate"><span class="pre">goto(x,y)</span></code> ne sait pas à quelles coordonnées elle doit déplacer la tortue. Donc on ajoute les paramètres <code class="docutils literal notranslate"><span class="pre">x,y</span></code> qui désignent les coordonnées entre les parenthèses palcées après le nom de la fonction : <code class="docutils literal notranslate"><span class="pre">deplacer(x,y)</span></code>.</p></li>
 <li><p>On va appeler cette fonction et vérifier qu’elle déplace bien la tortue.</p>
 <ol class="loweralpha simple">
 <li><p>Exécuter le code <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> et vérifier que la fenêtre graphique s’affiche avec la tortue.</p></li>

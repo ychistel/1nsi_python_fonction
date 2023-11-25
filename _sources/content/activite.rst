@@ -23,7 +23,9 @@ Le script Python est enregistré dans un fichier ``drapeau.py`` et contient les 
 Fonction déplacer
 -----------------
 
-Pour tracer les rectangles de couleur différente, il va falloir déplacer la tortue au bon endroit. Le déplacement de la tortue se fait avec les 3 fonctions ``up``, ``goto`` et ``down`` du module ``turtle``. L'objectif est donc de créer une fonction ``deplacer`` qui appelle ces 3 fonctions. On donne le début du code à compléter:
+Pour tracer les rectangles de couleur différente, il va falloir déplacer la tortue au bon endroit. Le déplacement de la tortue se fait avec les 3 fonctions ``up``, ``goto`` et ``down`` du module ``turtle``. L'objectif est donc de créer une fonction ``deplacer`` qui appelle ces 3 fonctions. 
+
+On donne le code de la fonction ``deplacer``:
 
 .. code-block:: python
 
@@ -31,16 +33,12 @@ Pour tracer les rectangles de couleur différente, il va falloir déplacer la to
        # on lève le crayon
        up()
        # on déplace la tortue
-       ...
+       goto(x,y)
        # on baisse le crayon
        down()
 
 #. Recopier cette fonction dans la partie de code du fichier ``drapeau.py`` réservée aux fonctions.
-#. Compléter la fonction pour déplacer la tortue à l'endroit voulu.
-#. En l'état, la fonction ``goto`` ne sait pas à quelles coordonnées elle doit déplacer la tortue. Pour cela, on utilise des paramètres ``x,y`` qui désignent les coordonnées où placer la tortue.
-
-   a. Ajouter ces paramètres : ``deplacer(x,y)``
-   b. Utiliser les même paramètres pour la fonction ``goto(x,y)``.
+#. En l'état, la fonction ``goto(x,y)`` ne sait pas à quelles coordonnées elle doit déplacer la tortue. Donc on ajoute les paramètres ``x,y`` qui désignent les coordonnées entre les parenthèses palcées après le nom de la fonction : ``deplacer(x,y)``.
 
 #. On va appeler cette fonction et vérifier qu'elle déplace bien la tortue.
 
