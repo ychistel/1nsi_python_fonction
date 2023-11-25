@@ -19,8 +19,7 @@ def deplacer(x,y):
     goto(x,y)
     down()
     
-def rectangle(x,y,l,h,couleur):
-    deplacer(x,y)
+def rectangle(l,h,couleur):
     begin_fill()
     color(couleur)
     for i in range(2):
@@ -29,6 +28,16 @@ def rectangle(x,y,l,h,couleur):
         forward(h)
         left(90)
     end_fill()
+
+def dessiner_drapeau(x,y,largeur,hauteur,pays,position):
+    for couleur in pays:
+        deplacer(x,y)
+        if position == 'h':
+            rectangle(largeur//3,hauteur,couleur)
+            x = x + largeur//3
+        else:
+            rectangle(largeur, hauteur//3, couleur)
+            y = y + hauteur//3
 
 # ----------------------
 # Le programme principal
@@ -42,22 +51,17 @@ L = 180
 # Drapeau de la France:
 # ---------------------------
 
-# rectangle bleu
-rectangle(0,0,L//3,H,"blue")
-# rectangle blanc
-rectangle(L//3,0,L//3,H,"white")
-# rectangle rouge
-rectangle(2*L//3,0,L//3,H,"red")
+fr = ['blue','white','red']
+dessiner_drapeau(0,0,L,H,fr,'h')
 
 # ---------------------------
-# Drapeau des Pays-Bas:
+# Drapeau de l'Allemagne:
 # ---------------------------
 
-# rectangle bleu
-rectangle(200,0,L,H//3,"blue")
-# rectangle blanc
-rectangle(200,H//3,L,H//3,"white")
-# rectangle rouge
-rectangle(200,2*H//3,L,H//3,"red")
+al = ['yellow','red','black']
+dessiner_drapeau(200,0,L,H,al,'v')
 
+# on cache la tortue
 hideturtle()
+# on met fin à la boucle d'exécution du module
+mainloop()

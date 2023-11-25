@@ -14,6 +14,14 @@ setworldcoordinates(-20,-20,400,200)
 # Les fonctions à écrire ici
 # --------------------------
 
+# fonction deplacer
+#-------------------
+
+
+
+# fonction rectangle
+#-------------------
+
 
 
 # ----------------------------------
@@ -22,6 +30,8 @@ setworldcoordinates(-20,-20,400,200)
 
 # Variables H et L pour la hauteur et Largeur des drapeaux
 
+L = 180
+H = 120
 
 # ---------------------------
 # Drapeau de la France:
@@ -35,15 +45,17 @@ setworldcoordinates(-20,-20,400,200)
 
 
 # ---------------------------
-# Drapeau des Pays-Bas:
+# Drapeau de l'Allemagne:
 # ---------------------------
 
-# dessiner le rectangle bleu
-
-# dessiner le rectangle blanc
+# dessiner le rectangle jaune
 
 # dessiner le rectangle rouge
 
+# dessiner le rectangle noir
+
 
 # A la fin, on cache la tortue!
-hideturtle()
+#hideturtle()
+# on arrête la boucle du module turtle
+mainloop()
