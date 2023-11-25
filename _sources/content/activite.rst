@@ -1,81 +1,118 @@
 Activité
 ========
 
-
-Certains drapeaux sont constitués de trois rectangles de couleurs différentes. Par exemple, le drapeau français est constitué de 3 rectangles bleu, blanc et rouge. Le drapeau des Pays-Bas est aussi constitué de trois rectangles bleu, blanc et rouge mais disposés horizontalement.
+Les drapeaux suivants sont constitués de trois rectangles de couleurs différentes. Le drapeau français est constitué de 3 rectangles bleu, blanc et rouge et le drapeau de l'Allemagne est constitué de trois rectangles jaune, rouge et noir.
 
 .. image:: ../img/drapeau_fr_pb.svg
    :align: center
-   :width: 360px
+   :width: 360
    
 L'objectif est de dessiné ces drapeaux avec le module ``turtle`` en respectant l'ordre des couleurs et la disposition verticale ou horizontale des rectangles.
+
+La figure ci-dessous donne les dimensions et les coordonnées à respecter pour représenter ces 2 drapeaux.
+
+.. figure:: ../img/drapeaux.svg
+   :align: center
+   :width: 560
 
 Le script Python est enregistré dans un fichier ``drapeau.py`` et contient les instructions suivantes:
 
 .. literalinclude:: ../python/drapeau.py
    :language: python
 
-La figure ci-dessous donne les dimensions et les coordonnées à respecter pour représenter les drapeaux.
+Fonction déplacer
+-----------------
 
-.. figure:: ../img/drapeaux.svg
-   :align: center
-   :width: 560
-
-1. On prend comme dimensions initales de drapeaux une largeur horizontale de 180 et une hauteur verticale de 120. Définir 2 variables ``L`` et ``H`` définissant la largeur et la hauteur du drapeau à représenter.
-
-2. Pour faire apparaître clairement les drapeaux, on modifie le fond d'écran avec la couleur *lightgray* . Ajouter l'appel de la fonction qui modifie la couleur du fond d'écran et vérifier qu'il s'applique.
-
-3. Le tracé d'un rectangle se réalise avec une boucle ``for``. 
-   
-   a. Écrire le code pour tracer un rectangle de largeur ``L`` et de hauteur ``H``.
-   b. Ajouter les instructions du module ``turtle`` pour mettre en couleur (de votre choix) le rectangle.
-
-Créer des drapeaux avec turtle
-------------------------------
-
-Pour créer un drapeau de trois couleurs, il faut tracer 3 rectangles de couleur différente qui s'alignent correctement et dans le bons sens. Cela suppose:
-
-- un positionnement correct du rectangle
-- des dimensions pour chaque rectangle
-- une disposition verticale ou horizontale
-- une couleur pour chaque rectangle
-
-La syntaxe Python pour créer nos fonctions est la suivante:
+Pour tracer les rectangles de couleur différente, il va falloir déplacer la tortue au bon endroit. Le déplacement de la tortue se fait avec les 3 fonctions ``up``, ``goto`` et ``down`` du module ``turtle``. L'objectif est donc de créer une fonction ``deplacer`` qui appelle ces 3 fonctions. On donne le début du code à compléter:
 
 .. code-block:: python
 
-   def nom_fonction(paramètre_1,paramètre_2,...):
-       instructions à exécuter
-       
-1. Nous devons déplacer la tortue pour effectuer les tracés. Pendant le déplacement, la tortue n'écrit pas. Une fois arrivée, elle doit pouvoir écrire. Compléter dans votre script, le code de la fonction ``deplacer`` qui prend en paramètre les coordonnées ``x`` et ``y`` à atteindre. On donne la première ligne.
+   def deplacer():
+       # on lève le crayon
+       up()
+       # on déplace la tortue
+       ...
+       # on baisse le crayon
+       down()
+
+#. Recopier cette fonction dans la partie de code du fichier ``drapeau.py`` réservée aux fonctions.
+#. Compléter la fonction pour déplacer la tortue à l'endroit voulu.
+#. En l'état, la fonction ``goto`` ne sait pas à quelles coordonnées elle doit déplacer la tortue. Pour cela, on utilise des paramètres ``x,y`` qui désignent les coordonnées où placer la tortue.
+
+   a. Ajouter ces paramètres : ``deplacer(x,y)``
+   b. Utiliser les même paramètres pour la fonction ``goto(x,y)``.
+
+#. On va appeler cette fonction et vérifier qu'elle déplace bien la tortue.
+
+   a. Exécuter le code ``drapeau.py`` et vérifier que la fenêtre graphique s'affiche avec la tortue.
+   b. Dans l'interpréteur (console), saisir l'instruction ``deplacer(100,100)`` puis sur la touche "entrée".
+   c. Vérifier que la tortue se déplace. Faire d'autres tests ou corriger votre fonction en cas d'erreur.
+
+La fonction rectangle
+----------------------
+
+Pour créer un drapeau de trois couleurs, il faut tracer 3 rectangles de couleur différente qui s'alignent correctement et dans le bons sens. Cela suppose de connaître la largeur, la hauteur et la couleur de chaque rectangle qui compose le drapeau.
+
+On va écrire la fonction ``rectangle`` qui construit un rectangle de couleur. La fonction a 3 paramètres qui sont:
+
+- ``largeur`` pour la largeur du rectangle;
+- ``hauteur`` pour la hauteur du rectangle;
+- ``couleur`` pour la couleur de remplissage et le tracé du rectangle.
+
+#. Ajouter la fonction ``rectangle`` avec ses 3 paramètres dans le fichier ``drapeau.py``
 
    .. code-block:: python
 
-      def deplacer(x,y):
+      def rectangle(largeur, hauteur, couleur):
+          begin_fill()
+          color(couleur)
+          for i in range(2):
+             forward(largeur)
+             left(90)
+             forward(hauteur)
+             left(90)
+          end_fill()
 
-2. La construction d'un rectangle de couleur est utilisé à plusieurs reprises pour créer un drapeau. L'écriture d'une fonction qui construit ce rectangle s'impose. La fonction ``rectangle`` a 5 paramètres qui sont:
+#. Exécuter le fichier ``drapeau.py`` puis saisir dans l'interpréteur l'instruction ``rectangle(100,150,"blue")`` et vérifier que le rectangle bleu se dessine bien dans la fenêtre graphique.
 
-   - ``x`` et ``y`` pour les coordonnées du sommet gauche en bas du rectangle;
-   - ``l`` et ``h`` pour la largeur et la hauteur du rectangle;
-   - ``couleur`` pour la couleur de remplissage et de tracé du rectangle.
-
-   .. image:: ../img/rectangle.svg
-      :align: center
-      :width: 360px
-
-   a. Écrire la déclaration de la fonction avec ces 5 paramètres.
-   b. Compléter le corps de la fonction en y insérant le code précédent pour tracer un rectangle.
-   c. Ajouter le positionnement du sommet bas gauche du rectangle.
-   d. Effectuer l'appel ``rectangle(50,0,100,150,"blue") et exécuter le code pour vérifier la construction d'un rectangle bleu``.
+Dessiner les drapeaux
+---------------------
    
-3. Nous allons écrire le code pour tracer les drapeaux de la Frace et des Pays-Bas qui ont les mêmes couleurs. Nous laisserons une distance de 50 entre chaque drapeau.
+Nous allons écrire le code pour tracer les drapeaux de la France et de l'Allemagne.
 
-   .. image:: ../img/drapeaux_fr_pb.png
-      :align: center
-      :width: 360px
-      
-   a. Écrire le code pour créer le drapeau de la France.
-   b. Écrire le code pour créer le drapeau des Pays-Bas.
-   c. Modifier les valeurs de ``L`` et ``H`` et vérifier que vos drapeaux restent bien tracés. Dans le cas contraire, apporter les modifications nécessaires.
+.. image:: ../img/drapeau_fr_pb.svg
+   :align: center
+   :width: 360px
    
+#. Repérez les coordonnées du coin bas et gauche de chaque rectangle qui compose le drapeau français.
+#. Dans la console, saisir les fonctions ``deplacer`` et ``rectangle`` pour dessiner le drapeau français.
+#. Lorsque vous avez réussi, ajoutez les instructions dans le code du fichier ``drapeau.py`` pour dessiner le drapeau de la France.
+#. Faire de même avec le drapeau de l'Allemagne. Attention, il doit être positionné à côté du drapeau français et avoir les mêmes dimensions.
    
+Aller plus loin
+-----------------
+
+On peut optimiser le code qui dessine les drapeaux.
+
+-  En utilisant un tableau avec les couleurs du drapeau à dessiner;
+-  En utilisant une boucle ``for`` qui contient les instructions ``deplacer`` et ``rectangle``;
+-  En créant une fonction ``dessine_drapeau`` qui dessine le drapeau demandé.
+
+#. Créer la variable ``fr`` contenant un tableau avec les 3 couleurs du drapeau français.
+#. Remplacer votre code dessinant le drapeau français par la boucle ``for`` suivante à compléter:
+
+   .. code-block:: python
+
+      x,y = 0,0
+      for couleur in fr:
+          deplacer(x,y)
+          rectangle(...,...,couleur)
+          x = ...
+
+#. Créer la fonction ``dessine_drapeau`` qui a pour paramètres :
+
+   -  ``x`` et ``y`` qui sont les coordonnées du coin bas et gauche du drapeau,
+   -  ``largeur`` et ``hauteur`` qui sont les dimensions du drapeau à dessiner,
+   -  ``pays`` qui est un tableau avec les couleurs du drapeau à dessiner.
+
+#. Ajouter un paramètre ``position`` qui adapte le dessin du drapeau selon que les rectangles sont verticaux ou horizontaux.

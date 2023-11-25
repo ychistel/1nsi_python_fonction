@@ -287,7 +287,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-drapeaux-avec-turtle">Créer des drapeaux avec turtle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-deplacer">Fonction déplacer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-fonction-rectangle">La fonction rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dessiner-les-drapeaux">Dessiner les drapeaux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aller-plus-loin">Aller plus loin</a></li>
 </ul>
             </nav>
         </div>
@@ -301,9 +304,13 @@ document.write(`
                   
   <section id="activite">
 <h1>Activité<a class="headerlink" href="#activite" title="Lien permanent vers cette rubrique">#</a></h1>
-<p>Certains drapeaux sont constitués de trois rectangles de couleurs différentes. Par exemple, le drapeau français est constitué de 3 rectangles bleu, blanc et rouge. Le drapeau des Pays-Bas est aussi constitué de trois rectangles bleu, blanc et rouge mais disposés horizontalement.</p>
-<a class="reference internal image-reference" href="../_images/drapeau_fr_pb.svg"><img alt="../_images/drapeau_fr_pb.svg" class="align-center" src="../_images/drapeau_fr_pb.svg" width="360px" /></a>
+<p>Les drapeaux suivants sont constitués de trois rectangles de couleurs différentes. Le drapeau français est constitué de 3 rectangles bleu, blanc et rouge et le drapeau de l’Allemagne est constitué de trois rectangles jaune, rouge et noir.</p>
+<a class="reference internal image-reference" href="../_images/drapeau_fr_pb.svg"><img alt="../_images/drapeau_fr_pb.svg" class="align-center" src="../_images/drapeau_fr_pb.svg" width="360" /></a>
 <p>L’objectif est de dessiné ces drapeaux avec le module <code class="docutils literal notranslate"><span class="pre">turtle</span></code> en respectant l’ordre des couleurs et la disposition verticale ou horizontale des rectangles.</p>
+<p>La figure ci-dessous donne les dimensions et les coordonnées à respecter pour représenter ces 2 drapeaux.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/drapeaux.svg"><img alt="../_images/drapeaux.svg" src="../_images/drapeaux.svg" width="560" /></a>
+</figure>
 <p>Le script Python est enregistré dans un fichier <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> et contient les instructions suivantes:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 
@@ -321,6 +328,14 @@ document.write(`
 <span class="c1"># Les fonctions à écrire ici</span>
 <span class="c1"># --------------------------</span>
 
+<span class="c1"># fonction deplacer</span>
+<span class="c1">#-------------------</span>
+
+
+
+<span class="c1"># fonction rectangle</span>
+<span class="c1">#-------------------</span>
+
 
 
 <span class="c1"># ----------------------------------</span>
@@ -329,6 +344,8 @@ document.write(`
 
 <span class="c1"># Variables H et L pour la hauteur et Largeur des drapeaux</span>
 
+<span class="n">L</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mi">120</span>
 
 <span class="c1"># ---------------------------</span>
 <span class="c1"># Drapeau de la France:</span>
@@ -342,76 +359,116 @@ document.write(`
 
 
 <span class="c1"># ---------------------------</span>
-<span class="c1"># Drapeau des Pays-Bas:</span>
+<span class="c1"># Drapeau de l&#39;Allemagne:</span>
 <span class="c1"># ---------------------------</span>
 
-<span class="c1"># dessiner le rectangle bleu</span>
-
-<span class="c1"># dessiner le rectangle blanc</span>
+<span class="c1"># dessiner le rectangle jaune</span>
 
 <span class="c1"># dessiner le rectangle rouge</span>
 
+<span class="c1"># dessiner le rectangle noir</span>
+
 
 <span class="c1"># A la fin, on cache la tortue!</span>
-<span class="n">hideturtle</span><span class="p">()</span>
+<span class="c1">#hideturtle()</span>
+<span class="c1"># on arrête la boucle du module turtle</span>
+<span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>La figure ci-dessous donne les dimensions et les coordonnées à respecter pour représenter les drapeaux.</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../_images/drapeaux.svg"><img alt="../_images/drapeaux.svg" src="../_images/drapeaux.svg" width="560" /></a>
-</figure>
+<section id="fonction-deplacer">
+<h2>Fonction déplacer<a class="headerlink" href="#fonction-deplacer" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Pour tracer les rectangles de couleur différente, il va falloir déplacer la tortue au bon endroit. Le déplacement de la tortue se fait avec les 3 fonctions <code class="docutils literal notranslate"><span class="pre">up</span></code>, <code class="docutils literal notranslate"><span class="pre">goto</span></code> et <code class="docutils literal notranslate"><span class="pre">down</span></code> du module <code class="docutils literal notranslate"><span class="pre">turtle</span></code>. L’objectif est donc de créer une fonction <code class="docutils literal notranslate"><span class="pre">deplacer</span></code> qui appelle ces 3 fonctions. On donne le début du code à compléter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deplacer</span><span class="p">():</span>
+    <span class="c1"># on lève le crayon</span>
+    <span class="n">up</span><span class="p">()</span>
+    <span class="c1"># on déplace la tortue</span>
+    <span class="o">...</span>
+    <span class="c1"># on baisse le crayon</span>
+    <span class="n">down</span><span class="p">()</span>
+</pre></div>
+</div>
 <ol class="arabic simple">
-<li><p>On prend comme dimensions initales de drapeaux une largeur horizontale de 180 et une hauteur verticale de 120. Définir 2 variables <code class="docutils literal notranslate"><span class="pre">L</span></code> et <code class="docutils literal notranslate"><span class="pre">H</span></code> définissant la largeur et la hauteur du drapeau à représenter.</p></li>
-<li><p>Pour faire apparaître clairement les drapeaux, on modifie le fond d’écran avec la couleur <em>lightgray</em> . Ajouter l’appel de la fonction qui modifie la couleur du fond d’écran et vérifier qu’il s’applique.</p></li>
-<li><p>Le tracé d’un rectangle se réalise avec une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<li><p>Recopier cette fonction dans la partie de code du fichier <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> réservée aux fonctions.</p></li>
+<li><p>Compléter la fonction pour déplacer la tortue à l’endroit voulu.</p></li>
+<li><p>En l’état, la fonction <code class="docutils literal notranslate"><span class="pre">goto</span></code> ne sait pas à quelles coordonnées elle doit déplacer la tortue. Pour cela, on utilise des paramètres <code class="docutils literal notranslate"><span class="pre">x,y</span></code> qui désignent les coordonnées où placer la tortue.</p>
 <ol class="loweralpha simple">
-<li><p>Écrire le code pour tracer un rectangle de largeur <code class="docutils literal notranslate"><span class="pre">L</span></code> et de hauteur <code class="docutils literal notranslate"><span class="pre">H</span></code>.</p></li>
-<li><p>Ajouter les instructions du module <code class="docutils literal notranslate"><span class="pre">turtle</span></code> pour mettre en couleur (de votre choix) le rectangle.</p></li>
+<li><p>Ajouter ces paramètres : <code class="docutils literal notranslate"><span class="pre">deplacer(x,y)</span></code></p></li>
+<li><p>Utiliser les même paramètres pour la fonction <code class="docutils literal notranslate"><span class="pre">goto(x,y)</span></code>.</p></li>
+</ol>
+</li>
+<li><p>On va appeler cette fonction et vérifier qu’elle déplace bien la tortue.</p>
+<ol class="loweralpha simple">
+<li><p>Exécuter le code <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> et vérifier que la fenêtre graphique s’affiche avec la tortue.</p></li>
+<li><p>Dans l’interpréteur (console), saisir l’instruction <code class="docutils literal notranslate"><span class="pre">deplacer(100,100)</span></code> puis sur la touche « entrée ».</p></li>
+<li><p>Vérifier que la tortue se déplace. Faire d’autres tests ou corriger votre fonction en cas d’erreur.</p></li>
 </ol>
 </li>
 </ol>
-<section id="creer-des-drapeaux-avec-turtle">
-<h2>Créer des drapeaux avec turtle<a class="headerlink" href="#creer-des-drapeaux-avec-turtle" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Pour créer un drapeau de trois couleurs, il faut tracer 3 rectangles de couleur différente qui s’alignent correctement et dans le bons sens. Cela suppose:</p>
+</section>
+<section id="la-fonction-rectangle">
+<h2>La fonction rectangle<a class="headerlink" href="#la-fonction-rectangle" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Pour créer un drapeau de trois couleurs, il faut tracer 3 rectangles de couleur différente qui s’alignent correctement et dans le bons sens. Cela suppose de connaître la largeur, la hauteur et la couleur de chaque rectangle qui compose le drapeau.</p>
+<p>On va écrire la fonction <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> qui construit un rectangle de couleur. La fonction a 3 paramètres qui sont:</p>
 <ul class="simple">
-<li><p>un positionnement correct du rectangle</p></li>
-<li><p>des dimensions pour chaque rectangle</p></li>
-<li><p>une disposition verticale ou horizontale</p></li>
-<li><p>une couleur pour chaque rectangle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">largeur</span></code> pour la largeur du rectangle;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hauteur</span></code> pour la hauteur du rectangle;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">couleur</span></code> pour la couleur de remplissage et le tracé du rectangle.</p></li>
 </ul>
-<p>La syntaxe Python pour créer nos fonctions est la suivante:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_fonction</span><span class="p">(</span><span class="n">paramètre_1</span><span class="p">,</span><span class="n">paramètre_2</span><span class="p">,</span><span class="o">...</span><span class="p">):</span>
-    <span class="n">instructions</span> <span class="n">à</span> <span class="n">exécuter</span>
-</pre></div>
-</div>
 <ol class="arabic">
-<li><p>Nous devons déplacer la tortue pour effectuer les tracés. Pendant le déplacement, la tortue n’écrit pas. Une fois arrivée, elle doit pouvoir écrire. Compléter dans votre script, le code de la fonction <code class="docutils literal notranslate"><span class="pre">deplacer</span></code> qui prend en paramètre les coordonnées <code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> à atteindre. On donne la première ligne.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">deplacer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<li><p>Ajouter la fonction <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> avec ses 3 paramètres dans le fichier <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rectangle</span><span class="p">(</span><span class="n">largeur</span><span class="p">,</span> <span class="n">hauteur</span><span class="p">,</span> <span class="n">couleur</span><span class="p">):</span>
+    <span class="n">begin_fill</span><span class="p">()</span>
+    <span class="n">color</span><span class="p">(</span><span class="n">couleur</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+       <span class="n">forward</span><span class="p">(</span><span class="n">largeur</span><span class="p">)</span>
+       <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+       <span class="n">forward</span><span class="p">(</span><span class="n">hauteur</span><span class="p">)</span>
+       <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">end_fill</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
-<li><p>La construction d’un rectangle de couleur est utilisé à plusieurs reprises pour créer un drapeau. L’écriture d’une fonction qui construit ce rectangle s’impose. La fonction <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> a 5 paramètres qui sont:</p>
+<li><p>Exécuter le fichier <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> puis saisir dans l’interpréteur l’instruction <code class="docutils literal notranslate"><span class="pre">rectangle(100,150,&quot;blue&quot;)</span></code> et vérifier que le rectangle bleu se dessine bien dans la fenêtre graphique.</p></li>
+</ol>
+</section>
+<section id="dessiner-les-drapeaux">
+<h2>Dessiner les drapeaux<a class="headerlink" href="#dessiner-les-drapeaux" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Nous allons écrire le code pour tracer les drapeaux de la France et de l’Allemagne.</p>
+<a class="reference internal image-reference" href="../_images/drapeau_fr_pb.svg"><img alt="../_images/drapeau_fr_pb.svg" class="align-center" src="../_images/drapeau_fr_pb.svg" width="360px" /></a>
+<ol class="arabic simple">
+<li><p>Repérez les coordonnées du coin bas et gauche de chaque rectangle qui compose le drapeau français.</p></li>
+<li><p>Dans la console, saisir les fonctions <code class="docutils literal notranslate"><span class="pre">deplacer</span></code> et <code class="docutils literal notranslate"><span class="pre">rectangle</span></code> pour dessiner le drapeau français.</p></li>
+<li><p>Lorsque vous avez réussi, ajoutez les instructions dans le code du fichier <code class="docutils literal notranslate"><span class="pre">drapeau.py</span></code> pour dessiner le drapeau de la France.</p></li>
+<li><p>Faire de même avec le drapeau de l’Allemagne. Attention, il doit être positionné à côté du drapeau français et avoir les mêmes dimensions.</p></li>
+</ol>
+</section>
+<section id="aller-plus-loin">
+<h2>Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>On peut optimiser le code qui dessine les drapeaux.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> pour les coordonnées du sommet gauche en bas du rectangle;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">l</span></code> et <code class="docutils literal notranslate"><span class="pre">h</span></code> pour la largeur et la hauteur du rectangle;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">couleur</span></code> pour la couleur de remplissage et de tracé du rectangle.</p></li>
+<li><p>En utilisant un tableau avec les couleurs du drapeau à dessiner;</p></li>
+<li><p>En utilisant une boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> qui contient les instructions <code class="docutils literal notranslate"><span class="pre">deplacer</span></code> et <code class="docutils literal notranslate"><span class="pre">rectangle</span></code>;</p></li>
+<li><p>En créant une fonction <code class="docutils literal notranslate"><span class="pre">dessine_drapeau</span></code> qui dessine le drapeau demandé.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/rectangle.svg"><img alt="../_images/rectangle.svg" class="align-center" src="../_images/rectangle.svg" width="360px" /></a>
-<ol class="loweralpha simple">
-<li><p>Écrire la déclaration de la fonction avec ces 5 paramètres.</p></li>
-<li><p>Compléter le corps de la fonction en y insérant le code précédent pour tracer un rectangle.</p></li>
-<li><p>Ajouter le positionnement du sommet bas gauche du rectangle.</p></li>
-<li><p>Effectuer l’appel <code class="docutils literal notranslate"><span class="pre">rectangle(50,0,100,150,&quot;blue&quot;)</span> <span class="pre">et</span> <span class="pre">exécuter</span> <span class="pre">le</span> <span class="pre">code</span> <span class="pre">pour</span> <span class="pre">vérifier</span> <span class="pre">la</span> <span class="pre">construction</span> <span class="pre">d'un</span> <span class="pre">rectangle</span> <span class="pre">bleu</span></code>.</p></li>
-</ol>
+<ol class="arabic">
+<li><p>Créer la variable <code class="docutils literal notranslate"><span class="pre">fr</span></code> contenant un tableau avec les 3 couleurs du drapeau français.</p></li>
+<li><p>Remplacer votre code dessinant le drapeau français par la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> suivante à compléter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">couleur</span> <span class="ow">in</span> <span class="n">fr</span><span class="p">:</span>
+    <span class="n">deplacer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">rectangle</span><span class="p">(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="n">couleur</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
 </li>
-<li><p>Nous allons écrire le code pour tracer les drapeaux de la Frace et des Pays-Bas qui ont les mêmes couleurs. Nous laisserons une distance de 50 entre chaque drapeau.</p>
-<a class="reference internal image-reference" href="../_images/drapeaux_fr_pb.png"><img alt="../_images/drapeaux_fr_pb.png" class="align-center" src="../_images/drapeaux_fr_pb.png" style="width: 360px;" /></a>
-<ol class="loweralpha simple">
-<li><p>Écrire le code pour créer le drapeau de la France.</p></li>
-<li><p>Écrire le code pour créer le drapeau des Pays-Bas.</p></li>
-<li><p>Modifier les valeurs de <code class="docutils literal notranslate"><span class="pre">L</span></code> et <code class="docutils literal notranslate"><span class="pre">H</span></code> et vérifier que vos drapeaux restent bien tracés. Dans le cas contraire, apporter les modifications nécessaires.</p></li>
-</ol>
+<li><p>Créer la fonction <code class="docutils literal notranslate"><span class="pre">dessine_drapeau</span></code> qui a pour paramètres :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> qui sont les coordonnées du coin bas et gauche du drapeau,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">largeur</span></code> et <code class="docutils literal notranslate"><span class="pre">hauteur</span></code> qui sont les dimensions du drapeau à dessiner,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pays</span></code> qui est un tableau avec les couleurs du drapeau à dessiner.</p></li>
+</ul>
 </li>
+<li><p>Ajouter un paramètre <code class="docutils literal notranslate"><span class="pre">position</span></code> qui adapte le dessin du drapeau selon que les rectangles sont verticaux ou horizontaux.</p></li>
 </ol>
 </section>
 </section>
@@ -460,7 +517,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creer-des-drapeaux-avec-turtle">Créer des drapeaux avec turtle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fonction-deplacer">Fonction déplacer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-fonction-rectangle">La fonction rectangle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dessiner-les-drapeaux">Dessiner les drapeaux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aller-plus-loin">Aller plus loin</a></li>
 </ul>
   </nav></div>
 
