@@ -25,7 +25,7 @@ Pour finir, une fonction peut avoir besoin de plusieurs valeurs comme la fonctio
 
 .. warning::
 
-   Une **fonction** se note toujours avec des parentèses situées juste après son nom.
+   Une **fonction** se note toujours avec des parenthèses situées juste après son nom.
 
 Comme le module ``Turtle``, nous pouvons créer nos propres fonctions en respectant une syntaxe imposée par le langage Python. La création de fonction apporte de nombreux avantages à un programme:
 
