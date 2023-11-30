@@ -29,7 +29,7 @@ On donne la fonction ``mystere_2`` ayant pour paramètre le nombre ``x``.
 .. literalinclude:: ../python/mystere.py
    :lines: 7-10
 
-1. Que renvoie l'appel ``mystere_2(7)`` ? et mystere_2(-4) ?
+1. Que renvoie l'appel ``mystere_2(7)`` ? et ``mystere_2(-4)`` ?
 2. On supprime l'instruction ``return y``. Que renvoie la fonction ?
 3. Est-il possible d'obtenir les mêmes valeurs sans utiliser la variable locale ``y`` ? Si oui, comment ?
 

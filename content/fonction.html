@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="Exercices" href="exercice.html" />
-    <link rel="prev" title="Les fonctions en Python" href="fonction_native.html" />
+    <link rel="prev" title="Activité" href="activite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -140,7 +140,6 @@
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="activite.html">Activité</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fonction_native.html">Les fonctions en Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Créer ses fonctions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercice_approfondissement.html">Exercices d’approfondissement</a></li>
@@ -308,26 +307,18 @@ document.write(`
 </div>
 <section id="creer-ses-fonctions">
 <h1>Créer ses fonctions<a class="headerlink" href="#creer-ses-fonctions" title="Lien permanent vers cette rubrique">#</a></h1>
-<p>Lorsqu’un programme contient des blocs de code <strong>semblables</strong> utilisés à
-plusieurs reprises, il est plus efficace d’écrire ce bloc de code
-dans une <strong>fonction</strong> et de remplacer chaque bloc du programme par un
-<strong>appel</strong> à la fonction.</p>
-<p>Cela donne une structure différente au programme. On écrit en premier
-toutes les fonctions puis le programme principal contenant les appels
-aux différentes fonctions.</p>
+<p>Lorsqu’un programme contient des blocs de code <strong>semblables</strong> utilisés à plusieurs reprises, il est plus efficace d’écrire ce bloc de code dans une <strong>fonction</strong> et de remplacer chaque bloc du programme par un <strong>appel</strong> à la fonction.</p>
+<p>Cela donne une structure différente au programme. On écrit en premier toutes les fonctions puis le programme principal contenant les appels aux différentes fonctions.</p>
 <a class="reference internal image-reference" href="../_images/fonction_1.svg"><img alt="image svg" class="align-center" src="../_images/fonction_1.svg" width="300px" /></a>
 <p>On trouve plusieurs avantages à créer ses fonctions:</p>
 <ul class="simple">
-<li><p>la maintenance du code est plus facile; il suffit de modifier la
-fonction ce qui évite de modifier tous les blocs de code éparpillés
-dans le programme principal.</p></li>
+<li><p>la maintenance du code est plus facile; il suffit de modifier la fonction ce qui évite de modifier tous les blocs de code éparpillés dans le programme principal.</p></li>
 <li><p>une fonction est réutilisable plusieurs fois</p></li>
 <li><p>le programme principal est rendu plus lisible</p></li>
-<li><p>une fonction peut utiliser des paramètres qui font référence aux
-variables du programme</p></li>
+<li><p>une fonction peut utiliser des paramètres qui font référence aux variables du programme</p></li>
 </ul>
-<div class="admonition-attention admonition">
-<p class="admonition-title">Attention</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
 <ul class="simple">
 <li><p>Les variables du programme principal sont <strong>globales</strong> et accessibles n’importe où dans le programme.</p></li>
 <li><p>Les variables d’une fonction sont <strong>locales</strong> et donc <strong>uniquement</strong> accessible dans la fonction.</p></li>
@@ -335,33 +326,30 @@ variables du programme</p></li>
 </div>
 <section id="en-python">
 <h2>En Python<a class="headerlink" href="#en-python" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>La syntaxe pour créer une fonction est la suivante : <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">&lt;nom_fonction&gt;([paramètres]):</span></code></p>
+<p>La syntaxe pour créer une fonction est la suivante :</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/fonction_syntaxe.svg"><img alt="../_images/fonction_syntaxe.svg" src="../_images/fonction_syntaxe.svg" width="420px" /></a>
+</figure>
 <p>Expliquons les différentes parties de cette syntaxe:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> est le mot clef qui informe Python qu’une fonction est créée;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;nom_fonction&gt;</span></code> est le nom qui identifie la fonction;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[paramètres]</span></code> représentent les différents paramètres utilisés par
-la fonction pour renvoyer une valeur. Il peut y avoir aucun ou 1 ou 2
-ou plusieurs paramètres. Ces paramètres sont remplacés par des
-valeurs lorsque la fonction est appelée dans le programme principal;</p></li>
-<li><p>Les deux points <code class="docutils literal notranslate"><span class="pre">:</span></code> termine la définition de la fonction et
-provoque une indentation des instructions contenues dans la fonction.</p></li>
-<li><p>L’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code> met fin à l’exécution de la fonction qui renvoie la valeur située juste après le mot clé <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nom_fonction</span></code> est le nom qui identifie la fonction;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(paramètres)</span></code> représentent les différents paramètres utilisés par la fonction pour renvoyer une valeur. Il peut y avoir aucun ou 1 ou 2 ou plusieurs paramètres. Ces paramètres sont remplacés par des valeurs lorsque la fonction est appelée dans le programme principal;</p></li>
+<li><p>Les deux points <code class="docutils literal notranslate"><span class="pre">:</span></code> termine la définition de la fonction et provoque une indentation des instructions contenues dans la fonction.</p></li>
+<li><p>L’instruction <code class="docutils literal notranslate"><span class="pre">return</span></code> met <strong>fin à l’exécution</strong> de la fonction qui renvoie la valeur située juste après le mot clé <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p></li>
 </ul>
 <div class="admonition-exemple admonition">
 <p class="admonition-title">Exemple</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
     <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
 <p>Dans l’interpréteur, on <strong>appelle la fonction</strong> avec deux arguments numériques:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ma_fonction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="go">5</span>
+<span class="go">     5</span>
 </pre></div>
 </div>
-</div></blockquote>
 <ul class="simple">
 <li><p>La fonction calcule la valeur <code class="docutils literal notranslate"><span class="pre">a+b</span></code> soit <span class="math notranslate nohighlight">\(2+3\)</span> et l’affecte à la variable locale <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
 <li><p>La fonction renvoie la valeur contenue dans la variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
@@ -382,12 +370,12 @@ provoque une indentation des instructions contenues dans la fonction.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="fonction_native.html"
+       href="activite.html"
        title="page précédente">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">précédent</p>
-        <p class="prev-next-title">Les fonctions en Python</p>
+        <p class="prev-next-title">Activité</p>
       </div>
     </a>
     <a class="right-next"
