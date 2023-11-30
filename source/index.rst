@@ -40,7 +40,6 @@ Comme le module ``Turtle``, nous pouvons créer nos propres fonctions en respect
    :hidden:
    
    content/activite.rst
-   content/fonction_native.rst
    content/fonction.rst
    content/exercice.rst  
    content/exercice_approfondissement.rst
