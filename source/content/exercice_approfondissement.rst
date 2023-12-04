@@ -19,7 +19,7 @@ Exercice 1
    :align: center
    :width: 320
    
-**Contraintes à respecter**
+.. rubric:: Contraintes à respecter
 
 - Définir une variable ``n`` pour le nombre de carrés
 - Écrire une fonction ``carré`` ayant pour paramètre ``cote`` pour la mesure du coté du carré et ``couleur`` pour la couleur de remplissage du carré.
@@ -47,7 +47,7 @@ Exercice 2
    :align: center
    :width: 320
    
-** Contraintes à respecter** 
+.. rubric:: Contraintes à respecter
 
 - Il y a autant de disque blanc que de disque rouge
 - Définir une variable ``n`` correspondant au nombre de disque rouge ou blanc
