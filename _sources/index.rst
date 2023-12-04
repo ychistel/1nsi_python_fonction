@@ -42,4 +42,5 @@ Comme le module ``Turtle``, nous pouvons créer nos propres fonctions en respect
    content/activite.rst
    content/fonction.rst
    content/exercice.rst  
+   content/exercice_tableau.rst
    content/exercice_approfondissement.rst
